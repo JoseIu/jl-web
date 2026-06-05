@@ -1,0 +1,30 @@
+---
+import "./styles.css";
+export interface Props {
+  variant?: "primary" | "secondary" | "outline";
+  href?: string;
+  size?: "sm" | "md" | "lg";
+  blank?: boolean;
+}
+
+const { variant = "primary", href, size = "md", blank = false } = Astro.props;
+
+const classes = `button button--${variant} button--${size}`;
+---
+
+{
+  href ? (
+    <a
+      href={href}
+      class={classes}
+      target={blank ? "_blank" : undefined}
+      rel={blank ? "noopener noreferrer" : undefined}
+    >
+      <slot />
+    </a>
+  ) : (
+    <button class={classes}>
+      <slot />
+    </button>
+  )
+}

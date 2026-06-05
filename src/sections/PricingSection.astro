@@ -1,0 +1,30 @@
+---
+import Pricing from '../components/pricing/Pricing.astro';
+---
+
+<section class="pricing-section" id="pricing">
+  <div class="pricing-section__container container">
+    <h2 class="pricing-section__title">Elige el tama&ntilde;o de tu web.</h2>
+    <Pricing />
+  </div>
+</section>
+
+<style>
+  .pricing-section {
+    padding: 4rem 0;
+  }
+
+  .pricing-section__title {
+    font-family: var(--font-headline);
+    font-size: 1.875rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .pricing-section__title {
+      font-size: 2.25rem;
+    }
+  }
+</style>

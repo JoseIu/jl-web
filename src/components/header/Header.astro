@@ -1,0 +1,44 @@
+---
+import "./styles.css";
+---
+
+<header class="header" id="header">
+  <div class="header__container container">
+    <a href="#" class="header__logo">JL-labs</a>
+    <button
+      class="header__hamburger"
+      id="hamburger"
+      aria-label="Menu de navegacion"
+    >
+      <span class="header__hamburger-line"></span>
+      <span class="header__hamburger-line"></span>
+      <span class="header__hamburger-line"></span>
+    </button>
+    <nav class="header__nav" id="nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a href="#services" class="header__nav-link">Servicios</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="#portfolio" class="header__nav-link">Portfolio</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="#pricing" class="header__nav-link">Precios</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="#faq" class="header__nav-link">FAQ</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const hamburger = document.getElementById("hamburger") as HTMLButtonElement;
+  const nav = document.getElementById("nav") as HTMLElement;
+
+  hamburger.addEventListener("click", () => {
+    nav.classList.toggle("header__nav--open");
+    hamburger.classList.toggle("header__hamburger--active");
+  });
+</script>

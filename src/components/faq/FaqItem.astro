@@ -1,0 +1,16 @@
+---
+import "./styles.css";
+export interface Props {
+  question: string;
+  answer: string;
+}
+
+const { question, answer } = Astro.props;
+---
+
+<details class="faq__item">
+  <summary class="faq__question">{question}</summary>
+  <div class="faq__answer">
+    <p>{answer}</p>
+  </div>
+</details>

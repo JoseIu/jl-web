@@ -1,0 +1,67 @@
+---
+import Button from "../components/button/Button.astro";
+---
+
+<section class="cta" id="contact">
+  <div class="cta__container container">
+    <h2 class="cta__title">
+      Cuéntanos tu idea. Te decimos precio y plazo hoy mismo.
+    </h2>
+    <p class="cta__subtitle">
+      Sin formularios eternos. Escríbenos por WhatsApp y hablamos como personas,
+      sin tecnicismos ni compromiso.
+    </p>
+    <div class="cta__actions">
+      <Button
+        variant="primary"
+        size="lg"
+        href="https://wa.me/34600000000"
+        blank={true}
+      >
+        Escríbenos por WhatsApp
+      </Button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--secondary), #111827);
+    color: var(--primary-inverted);
+    text-align: center;
+  }
+
+  .cta__title {
+    font-family: var(--font-headline);
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .cta__subtitle {
+    font-size: 1.0625rem;
+    color: #9ca3af;
+    margin-bottom: 2rem;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  .cta__actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (min-width: 768px) {
+    .cta {
+      padding: 6rem 0;
+    }
+
+    .cta__title {
+      font-size: 2.25rem;
+    }
+  }
+</style>

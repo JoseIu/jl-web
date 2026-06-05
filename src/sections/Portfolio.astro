@@ -1,0 +1,133 @@
+---
+const projects = [
+  {
+    title: 'Vacaciones Alegria',
+    description: 'Web de reservas para casas rurales',
+    tags: ['Reservas online', 'Pagos Stripe'],
+    gradient: 'linear-gradient(135deg, #667eea, #764ba2)',
+  },
+  {
+    title: 'Annarealfood',
+    description: 'Web de marca para divulgacion de comida real',
+    tags: ['Lead magnets', 'Catalogo'],
+    gradient: 'linear-gradient(135deg, #f093fb, #f5576c)',
+  },
+];
+---
+
+<section class="portfolio" id="portfolio">
+  <div class="portfolio__container container">
+    <h2 class="portfolio__title">Webs que ya est&aacute;n funcionando.</h2>
+    <div class="portfolio__grid">
+      {projects.map((project) => (
+        <article class="portfolio__card">
+          <div class="portfolio__card-image" style={`background: ${project.gradient}`}>
+            <span class="portfolio__card-initials">
+              {project.title.split(' ').map((w) => w[0]).join('').slice(0, 2)}
+            </span>
+          </div>
+          <div class="portfolio__card-body">
+            <h3 class="portfolio__card-title">{project.title}</h3>
+            <p class="portfolio__card-description">{project.description}</p>
+            <div class="portfolio__card-tags">
+              {project.tags.map((tag) => (
+                <span class="portfolio__card-tag">{tag}</span>
+              ))}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .portfolio {
+    padding: 4rem 0;
+    background-color: var(--neutral);
+  }
+
+  .portfolio__title {
+    font-family: var(--font-headline);
+    font-size: 1.875rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .portfolio__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .portfolio__card {
+    background-color: var(--primary-inverted);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .portfolio__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .portfolio__card-image {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .portfolio__card-initials {
+    font-family: var(--font-headline);
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .portfolio__card-body {
+    padding: 1.5rem;
+  }
+
+  .portfolio__card-title {
+    font-family: var(--font-headline);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .portfolio__card-description {
+    font-size: 0.9375rem;
+    color: var(--tertiary);
+    margin-bottom: 1rem;
+  }
+
+  .portfolio__card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .portfolio__card-tag {
+    background-color: rgba(249, 115, 22, 0.1);
+    color: var(--primary);
+    font-family: var(--font-label);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .portfolio__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio__title {
+      font-size: 2.25rem;
+    }
+  }
+</style>

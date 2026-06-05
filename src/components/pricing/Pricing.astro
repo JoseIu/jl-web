@@ -1,0 +1,66 @@
+---
+import PricingCard from "./PricingCard.astro";
+import "./styles.css";
+
+const pricingData = [
+  {
+    title: "Web estatica",
+    price: "400",
+    period: "pago unico + mantenimiento mensual",
+    features: [
+      "Diseno responsive",
+      "Optimizacion SEO basica",
+      "Hosting incluido",
+      "Dominio .com (.es)",
+      "Formulario de contacto",
+      "Integracion redes sociales",
+    ],
+    highlighted: false,
+  },
+  {
+    title: "Web con funciones",
+    price: "999",
+    period: "pago unico + mantenimiento mensual",
+    features: [
+      "Todo lo del plan estatico",
+      "Panel administrador",
+      "Blog / noticias",
+      "Reservas online",
+      "Pagos con Stripe",
+      "SEO avanzado",
+      "Lead magnets / captacion",
+    ],
+    highlighted: true,
+  },
+  {
+    title: "A medida",
+    price: "A tu medida",
+    period: "presupuesto personalizado + mantenimiento mensual",
+    features: [
+      "Todo lo del plan funciones",
+      "Funcionalidades custom",
+      "Integraciones API",
+      "Dashboard avanzado",
+      "Soporte prioritario",
+      "Auditoria de rendimiento",
+    ],
+    highlighted: false,
+  },
+];
+---
+
+<div class="pricing">
+  <div class="pricing__grid">
+    {
+      pricingData.map((plan) => (
+        <PricingCard
+          title={plan.title}
+          price={plan.price}
+          period={plan.period}
+          features={plan.features}
+          highlighted={plan.highlighted}
+        />
+      ))
+    }
+  </div>
+</div>

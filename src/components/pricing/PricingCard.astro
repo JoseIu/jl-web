@@ -1,0 +1,41 @@
+---
+import Button from "../button/Button.astro";
+import "./styles.css";
+
+export interface Props {
+  title: string;
+  price: string;
+  period?: string;
+  features: string[];
+  highlighted?: boolean;
+}
+
+const { title, price, period, features, highlighted = false } = Astro.props;
+
+const isPriceANumber = !isNaN(parseFloat(price));
+---
+
+<article
+  class={`pricing__card ${highlighted ? "pricing__card--highlighted" : ""}`}
+>
+  <h3 class="pricing__card-title">{title}</h3>
+  <div class="pricing__card-price-wrapper">
+    <span class="pricing__card-price">{price} {isPriceANumber ? "€" : ""}</span>
+    {period && <span class="pricing__card-period">{period}</span>}
+  </div>
+  <ul class="pricing__card-features">
+    {
+      features.map((feature) => (
+        <li class="pricing__card-feature">{feature}</li>
+      ))
+    }
+  </ul>
+  <Button
+    variant="primary"
+    size="md"
+    href="https://wa.me/34600000000"
+    blank={true}
+  >
+    Solicitar presupuesto
+  </Button>
+</article>

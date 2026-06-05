@@ -1,0 +1,35 @@
+---
+import FaqItem from "./FaqItem.astro";
+import "./styles.css";
+
+const faqData = [
+  {
+    question: "Cuanto cuesta una pagina web?",
+    answer:
+      "Nuestros precios parten desde 300 para webs estaticas. Dependiendo de las funcionalidades que necesites, podemos ofrecerte un presupuesto personalizado sin compromiso. Escribenos por WhatsApp y te damos un precio cerrado sin sorpresas.",
+  },
+  {
+    question: "Cuanto tardais en hacerla?",
+    answer:
+      "Una web estatica la tenemos lista en 3-5 dias. Proyectos mas complejos pueden llevar de 1 a 2 semanas. Trabajamos rapido porque sabemos que tu negocio no puede esperar.",
+  },
+  {
+    question: "La web es mia?",
+    answer:
+      "Si, la web es 100% tuya. Te entregamos todo el codigo y los archivos. No te atamos a ningun contrato de permanencia ni plataforma propietaria. Si quieres llevarte la web a otro proveedor, puedes hacerlo cuando quieras.",
+  },
+  {
+    question: "Puedo pagar a plazos?",
+    answer:
+      "Si, ofrecemos facilidades de pago. Hablamos contigo para encontrar la mejor opcion segun tu proyecto y tus necesidades. Escribenos y lo vemos juntos.",
+  },
+];
+---
+
+<div class="faq">
+  {
+    faqData.map((item) => (
+      <FaqItem question={item.question} answer={item.answer} />
+    ))
+  }
+</div>
