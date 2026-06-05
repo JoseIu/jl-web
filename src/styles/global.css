@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 :root {
-  --primary: #F97316;
-  --primary-inverted: #FFFFFF;
-  --secondary: #1F2937;
+  --primary: #f97316;
+  --primary-inverted: #ffffff;
+  --secondary: #1f2937;
   --secondary-outlined: transparent;
-  --tertiary: #6B7280;
-  --neutral: #F9FAFB;
-  --font-headline: 'Inter', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-label: 'Inter', sans-serif;
+  --tertiary: #6b7280;
+  --neutral: #f9fafb;
+  --font-headline: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
 }
 
 *,
@@ -22,14 +22,6 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--font-body);
-  color: var(--secondary);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 img {
@@ -47,9 +39,9 @@ ul {
   list-style: none;
 }
 
-.container {
+.wrapper {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1450px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -58,4 +50,126 @@ ul {
   .container {
     padding: 0 2rem;
   }
+}
+
+img,
+picture,
+video,
+iframe,
+figure,
+canvas {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  height: initial;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+p a {
+  display: inline;
+}
+li,
+menu,
+summary {
+  list-style: none;
+}
+ol {
+  counter-reset: revert;
+}
+html {
+  scroll-behavior: smooth;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em,
+mark,
+del,
+pre,
+code {
+  font: inherit;
+  line-height: 1em;
+  color: inherit;
+  text-decoration: none;
+  text-wrap: pretty;
+}
+mark {
+  background-color: transparent;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+}
+textarea {
+  white-space: pre-wrap;
+}
+::placeholder {
+  color: unset;
+}
+button,
+label {
+  cursor: pointer;
+}
+table,
+tr,
+td,
+th,
+thead,
+tbody,
+tfoot {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font: inherit;
+}
+svg {
+  width: 100%;
+  height: initial;
+  display: block;
+  fill: currentColor;
+}
+p svg {
+  display: inline;
+  width: initial;
+}
+
+body {
+  min-height: 100vh;
+  color: inherit;
+  line-height: 1.5em;
+  font-family: var(--font-body);
+  color: var(--secondary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--neutral);
 }

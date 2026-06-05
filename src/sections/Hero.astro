@@ -1,9 +1,10 @@
 ---
 import Button from "../components/button/Button.astro";
+import HeroWeb from "../components/hero-web/HeroWeb.astro";
 ---
 
-<section class="hero" id="hero">
-  <div class="hero__container container">
+<section class="hero wrapper" id="hero">
+  <div class="hero__container">
     <h1 class="hero__title">
       Tu p&aacute;gina web profesional, desde 300&euro;.
     </h1>
@@ -42,12 +43,16 @@ import Button from "../components/button/Button.astro";
       </div>
     </div>
   </div>
+  <div>
+    <HeroWeb />
+  </div>
 </section>
 
 <style>
   .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding: 8rem 0 4rem;
-    background: linear-gradient(135deg, var(--neutral) 0%, #fff 100%);
   }
 
   .hero__title {

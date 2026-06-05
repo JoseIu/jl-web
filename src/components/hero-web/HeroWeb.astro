@@ -1,0 +1,60 @@
+---
+import Button from "../button/Button.astro";
+import "./styles.css";
+---
+
+<div class="hero-web">
+  <div class="hero-web__window">
+    <div class="hero-web__header">
+      <div class="hero-web__toolbar">
+        <div class="hero-web__traffic-lights">
+          <span class="hero-web__traffic-light hero-web__traffic-light--red"
+          ></span>
+          <span class="hero-web__traffic-light hero-web__traffic-light--yellow"
+          ></span>
+          <span class="hero-web__traffic-light hero-web__traffic-light--green"
+          ></span>
+        </div>
+      </div>
+      <div class="hero-web__url-bar">
+        <div class="hero-web__url-content">
+          <svg
+            class="hero-web__lock-icon"
+            viewBox="0 0 24 24"
+            width="12"
+            height="12"
+            fill="currentColor"
+          >
+            <path
+              d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z"
+            ></path>
+          </svg>
+          <span class="hero-web__url-text">surgelabs.com</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-web__content">
+      <span class="hero-web__label">Tu negocio</span>
+      <h2 class="hero-web__title">La web que hace sonar tu tel&eacute;fono.</h2>
+      <div class="hero-web__actions">
+        <Button href="https://wa.me/34600000000" variant="primary" blank
+          >Contactar</Button
+        >
+      </div>
+      <div class="hero-web__cards">
+        <article class="hero-web__card">
+          <h3 class="hero-web__card-title">R&aacute;pida</h3>
+          <p class="hero-web__card-text">Carga veloz</p>
+        </article>
+        <article class="hero-web__card">
+          <h3 class="hero-web__card-title">M&oacute;vil</h3>
+          <p class="hero-web__card-text">Se ve perfecta</p>
+        </article>
+        <article class="hero-web__card">
+          <h3 class="hero-web__card-title">Google</h3>
+          <p class="hero-web__card-text">Te encuentran</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>

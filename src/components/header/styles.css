@@ -3,8 +3,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--primary-inverted);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: var(--neutral);
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
   z-index: 1000;
 }
 
@@ -37,7 +37,9 @@
   width: 24px;
   height: 2px;
   background-color: var(--secondary);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .header__hamburger--active .header__hamburger-line:nth-child(1) {
@@ -58,7 +60,6 @@
   top: 4rem;
   left: 0;
   width: 100%;
-  background-color: var(--primary-inverted);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
