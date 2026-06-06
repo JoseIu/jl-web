@@ -1,7 +1,12 @@
 .pricing__grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 325px);
+  justify-content: center;
   gap: 1.5rem;
+
+  @media (max-width: 1025px) {
+    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  }
 }
 
 .pricing__card {
@@ -11,7 +16,10 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  justify-content: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .pricing__card:hover {
@@ -26,7 +34,7 @@
 }
 
 .pricing__card--highlighted::before {
-  content: 'Recomendado';
+  content: "Recomendado";
   position: absolute;
   top: -0.75rem;
   left: 50%;
@@ -82,21 +90,9 @@
 }
 
 .pricing__card-feature::before {
-  content: '\2713';
+  content: "\2713";
   position: absolute;
   left: 0;
   color: var(--primary);
   font-weight: 700;
-}
-
-@media (min-width: 768px) {
-  .pricing__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .pricing__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }

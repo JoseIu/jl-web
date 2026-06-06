@@ -1,44 +1,48 @@
 ---
-
+import ResponsiveIcon from "../assets/icons/why-us/responsiveIcon.svg";
+import RocketIcon from "../assets/icons/why-us/rocketIcon.svg";
+import WalletIcon from "../assets/icons/why-us/walletIcon.svg";
 ---
 
 <section class="why-us" id="services">
   <div class="why-us__container wrapper">
+    <p class="why-us__label">POR QUÉ JS-LABS</p>
     <h2 class="why-us__title">Una web que trabaja para tu negocio.</h2>
+    <p class="why-us__description">
+      No vendemos webs caras ni complicadas. Vendemos una herramienta que te
+      trae clientes, a un precio que cualquier negocio puede asumir.
+    </p>
     <div class="why-us__grid">
       <article class="why-us__card">
-        <div class="why-us__card-icon">&#128176;</div>
+        <WalletIcon class="why-us__card-icon" />
         <h3 class="why-us__card-title">Precio cerrado, sin sorpresas</h3>
         <p class="why-us__card-description">
-          Te damos un presupuesto claro desde el principio. Lo que pactamos es
-          lo que pagas, sin costes ocultos ni aumentos a mitad del proyecto.
+          Te decimos el precio antes de empezar. Lo que acordamos es lo que
+          pagas, y puedes dividirlo hasta en 3 plazos.
         </p>
       </article>
       <article class="why-us__card">
-        <div class="why-us__card-icon">&#128640;</div>
-        <h3 class="why-us__card-title">Lista en pocos d&iacute;as</h3>
+        <RocketIcon class="why-us__card-icon" />
+        <h3 class="why-us__card-title">Lista en pocos días</h3>
         <p class="why-us__card-description">
-          No esperes meses. Una web est&aacute;tica la tienes funcionando en 3-5
-          d&iacute;as. Proyectos m&aacute;s grandes en 1-2 semanas. Sin
-          burocracia.
+          Nada de esperar meses. Tu web online y funcionando en cuestión de
+          días, no de trimestres.
         </p>
       </article>
       <article class="why-us__card">
-        <div class="why-us__card-icon">&#127919;</div>
+        <ResponsiveIcon class="why-us__card-icon" />
         <h3 class="why-us__card-title">Hecha para conseguir clientes</h3>
         <p class="why-us__card-description">
-          Cada secci&oacute;n est&aacute; pensada para convertir visitantes en
-          clientes. Llamadas a la acci&oacute;n claras, dise&ntilde;o persuasivo
-          y optimizaci&oacute;n de conversi&oacute;n.
+          No diseñamos webs bonitas que no sirven. Cada sección está pensada
+          para que te llamen o te escriban.
         </p>
       </article>
       <article class="why-us__card">
-        <div class="why-us__card-icon">&#128241;</div>
-        <h3 class="why-us__card-title">Perfecta en m&oacute;vil y en Google</h3>
+        <ResponsiveIcon class="why-us__card-icon" />
+        <h3 class="why-us__card-title">Perfecta en móvil y en Google</h3>
         <p class="why-us__card-description">
-          Dise&ntilde;o responsive que se ve impecable en cualquier dispositivo
-          y optimizaci&oacute;n SEO para que tu negocio aparezca en los
-          resultados de b&uacute;squeda.
+          Carga rápida, se ve impecable en el móvil y preparada para que tus
+          clientes te encuentren en Google.
         </p>
       </article>
     </div>
@@ -49,24 +53,35 @@
   .why-us {
     padding: 4rem 0;
   }
-
+  .why-us__label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--tertiary);
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
   .why-us__title {
     font-family: var(--font-headline);
-    font-size: 1.875rem;
+    font-size: clamp(1.75rem, 5vw, 3rem);
     font-weight: 800;
-    text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 15px;
+    max-width: 600px;
   }
-
+  .why-us__description {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 500;
+    margin-bottom: 64px;
+  }
   .why-us__grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
   }
 
   .why-us__card {
     background-color: var(--primary-inverted);
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--border-muted);
     border-radius: 1rem;
     padding: 1.5rem;
     transition:
@@ -80,30 +95,23 @@
   }
 
   .why-us__card-icon {
-    font-size: 2rem;
     margin-bottom: 1rem;
+    width: 3.5rem;
   }
 
   .why-us__card-title {
+    margin-bottom: 1rem;
+    line-height: 26px;
     font-family: var(--font-headline);
     font-size: 1.125rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    letter-spacing: 0;
   }
 
   .why-us__card-description {
     font-size: 0.9375rem;
-    color: var(--tertiary);
+    color: var(--tertiary-light);
     line-height: 1.7;
-  }
-
-  @media (min-width: 768px) {
-    .why-us__grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .why-us__title {
-      font-size: 2.25rem;
-    }
+    text-wrap: pretty;
   }
 </style>
