@@ -87,6 +87,17 @@ button/
 └── styles.css
 ```
 
+y al importarlo en el componente se hace de esta forma, dentro de `---`.
+
+```
+---
+import "./styles.css";
+---
+
+<button> Hola </button>
+
+```
+
 ---
 
 ## Prohibido

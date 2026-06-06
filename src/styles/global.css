@@ -5,8 +5,13 @@
   --primary-inverted: #ffffff;
   --secondary: #1f2937;
   --secondary-outlined: transparent;
-  --tertiary: #6b7280;
+  --tertiary: #9d4300;
+  --tertiary-light: #584237;
+  --border-color: #8c7164;
+  --tertiary-2: #6b7280;
   --neutral: #f9fafb;
+  --surface: #f3f4f5;
+  --border-muted: #e0c0b1;
   --font-headline: "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
   --font-label: "Inter", sans-serif;
@@ -45,7 +50,9 @@ ul {
   margin: 0 auto;
   padding: 0 1rem;
 }
-
+.button__icon {
+  width: 1.25rem;
+}
 @media (min-width: 768px) {
   .container {
     padding: 0 2rem;

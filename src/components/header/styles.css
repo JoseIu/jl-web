@@ -55,6 +55,7 @@
 }
 
 .header__nav {
+  background-color: var(--neutral);
   display: none;
   position: absolute;
   top: 4rem;

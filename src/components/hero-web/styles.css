@@ -1,5 +1,4 @@
 .hero-web {
-  padding: 1rem 1rem 1rem;
   display: flex;
   justify-content: center;
   background: var(--neutral);
@@ -12,10 +11,8 @@
   border-radius: 14px;
   overflow: hidden;
   background: var(--primary-inverted);
-  box-shadow: 0 4px 44px var(--primary);
-  /* box-shadow:
-    0 25px 60px var(--primary),
-    0 8px 24px var(--primary); */
+  box-shadow: 3px 2px 61px 14px rgba(249, 115, 22, 0.1);
+  border: 1px solid #e0c0b1;
 }
 .hero-web__header {
   padding: 0.5rem 1rem 0.75rem;
@@ -89,7 +86,7 @@
 }
 
 .hero-web__label {
-  display: inline-block;
+  display: block;
   font-family: var(--font-label);
   font-size: 0.8125rem;
   font-weight: 600;
@@ -97,12 +94,14 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 0.75rem;
+  text-align: left;
 }
 
 .hero-web__title {
   font-family: var(--font-headline);
   font-size: clamp(1.5rem, 5vw, 2.25rem);
   font-weight: 800;
+  text-align: left;
   line-height: 1.1;
   color: var(--secondary);
   margin-bottom: 2rem;
@@ -113,39 +112,16 @@
   margin-bottom: 1rem;
 }
 
-.hero-web__button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-label);
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.2;
-  padding: 0.875rem 2rem;
-  background-color: var(--primary);
-  color: var(--primary-inverted);
-  border: none;
-  border-radius: 999px;
-  cursor: pointer;
-  text-decoration: none;
-  transition:
-    background-color 0.3s ease,
-    transform 0.2s ease;
-}
-
 .hero-web__cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 1rem;
-  flex-wrap: wrap;
 }
 
 .hero-web__card {
   background: var(--neutral);
   padding: 1.25rem 1.5rem;
   border-radius: 12px;
-  min-width: 130px;
-  flex: 1;
-  max-width: 180px;
 }
 
 .hero-web__card-title {
@@ -160,15 +136,4 @@
   font-size: 0.875rem;
   color: var(--tertiary);
   margin: 0;
-}
-
-@media (min-width: 768px) {
-  .hero-web__content {
-    padding: 2rem 2rem;
-  }
-
-  .hero-web__card {
-    padding: 1.5rem 2rem;
-    min-width: 150px;
-  }
 }

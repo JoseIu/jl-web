@@ -1,0 +1,42 @@
+.features {
+  background-color: var(--primary-inverted);
+  border-top: 2px solid var(--border-muted);
+  border-bottom: 2px solid var(--border-muted);
+  padding: 3rem 1rem;
+}
+
+.features__track {
+  display: flex;
+  gap: 1.5rem;
+  overflow: hidden;
+  /* overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; */
+}
+.features__card-icon {
+  width: 1.2rem;
+}
+
+.features__card {
+  flex: 1 0 0;
+  min-width: 165px;
+  scroll-snap-align: start;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.features__card-title {
+  font-family: var(--font-headline);
+  font-size: 1.125rem;
+  color: var(--tertiary-light);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.features__card-description {
+  font-size: 0.9375rem;
+  color: var(--tertiary);
+  line-height: 1.7;
+}
