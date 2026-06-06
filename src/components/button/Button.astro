@@ -5,6 +5,7 @@ export interface Props {
   href?: string;
   size?: "sm" | "md" | "lg";
   blank?: boolean;
+  iCon?: string;
 }
 
 const { variant = "primary", href, size = "md", blank = false } = Astro.props;
@@ -20,10 +21,13 @@ const classes = `button button--${variant} button--${size}`;
       target={blank ? "_blank" : undefined}
       rel={blank ? "noopener noreferrer" : undefined}
     >
+      <slot name="icon" />
       <slot />
+      <slot name="icon-r" />
     </a>
   ) : (
     <button class={classes}>
+      <slot name="icon" />
       <slot />
     </button>
   )

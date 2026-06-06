@@ -1,5 +1,6 @@
 .button {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
@@ -51,12 +52,12 @@
 }
 
 .button--outline {
-  background-color: var(--secondary-outlined);
+  background-color: transparent;
   color: var(--secondary);
-  border-color: var(--secondary);
+  border-color: var(--border-color);
 }
 
 .button--outline:hover {
-  background-color: var(--secondary);
+  background-color: var(--border-color);
   color: var(--primary-inverted);
 }
