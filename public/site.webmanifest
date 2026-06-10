@@ -1,0 +1,21 @@
+{
+  "name": "Surgelabs",
+  "short_name": "Surgelabs",
+  "description": "Diseño web profesional a medida",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f9fa",
+  "theme_color": "#b44c04",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/jl-web.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}

@@ -11,8 +11,8 @@ export interface Props {
 
 const {
   title = "Surgelabs | Diseño web profesional a medida",
-  description = "Soluciones web de alto rendimiento para negocios que buscan crecer. Webs rápidas, bonitas y pensadas para conseguir clientes. Desde landings hasta proyectos a medida.",
-  image = "/og-image.png",
+  description = "Soluciones web de alto rendimiento para tu negocio. Webs rápidas, bonitas y optimizadas para conseguir clientes. De landings a proyectos a medida.",
+  image = "/jl-web.webp",
 } = Astro.props;
 
 const siteUrl = "https://jl-web-xi.vercel.app";
@@ -33,6 +33,9 @@ const canonicalURL = new URL(Astro.url.pathname, siteUrl).toString();
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/jl-web.webp" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#b44c04" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Surgelabs" />
@@ -45,10 +48,25 @@ const canonicalURL = new URL(Astro.url.pathname, siteUrl).toString();
     <meta property="og:locale" content="es_ES" />
 
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@surgelabs" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={fullImageUrl} />
     <meta name="twitter:url" content={canonicalURL} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": title,
+      "description": description,
+      "url": canonicalURL,
+      "inLanguage": "es",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Surgelabs",
+        "url": siteUrl
+      }
+    })} />
   </head>
   <body>
     <Header />
