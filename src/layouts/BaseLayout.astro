@@ -1,7 +1,7 @@
 ---
-import Header from '../components/header/Header.astro';
-import Footer from '../components/footer/Footer.astro';
-import '../styles/global.css';
+import Footer from "../components/footer/Footer.astro";
+import Header from "../components/header/Header.astro";
+import "../styles/global.css";
 
 export interface Props {
   title?: string;
@@ -46,6 +46,7 @@ const canonicalURL = new URL(Astro.url.pathname, siteUrl).toString();
     <meta property="og:image:height" content="630" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:locale" content="es_ES" />
+    <meta property="og:image:alt" content={description} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@surgelabs" />
@@ -54,19 +55,22 @@ const canonicalURL = new URL(Astro.url.pathname, siteUrl).toString();
     <meta name="twitter:image" content={fullImageUrl} />
     <meta name="twitter:url" content={canonicalURL} />
 
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": title,
-      "description": description,
-      "url": canonicalURL,
-      "inLanguage": "es",
-      "isPartOf": {
-        "@type": "WebSite",
-        "name": "Surgelabs",
-        "url": siteUrl
-      }
-    })} />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: title,
+        description: description,
+        url: canonicalURL,
+        inLanguage: "es",
+        isPartOf: {
+          "@type": "WebSite",
+          name: "Surgelabs",
+          url: siteUrl,
+        },
+      })}
+    />
   </head>
   <body>
     <Header />
