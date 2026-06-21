@@ -2,11 +2,12 @@
 import "./styles.css";
 ---
 
-<form class="form">
+<form class="form" novalidate>
   <input
     class="form__input"
     type="text"
     name="nombre"
+    id="nombre"
     placeholder="Nombre"
     required
   />
@@ -14,10 +15,97 @@ import "./styles.css";
     class="form__input"
     type="email"
     name="email"
+    id="email"
     placeholder="Email"
     required
   />
-
-  <textarea class="form__area" name="" id="" placeholder="Asunto"></textarea>
+  <textarea
+    class="form__area"
+    name="asunto"
+    id="asunto"
+    placeholder="Asunto"
+    required></textarea>
   <button class="form__submit" type="submit">Enviar</button>
 </form>
+
+<script is:inline>
+  const form = document.querySelector(".form");
+  if (form) {
+    const inputs = form.querySelectorAll("input, textarea");
+
+    const messages = {
+      nombre: "El nombre es obligatorio",
+      email: "Introduce un email válido",
+      asunto: "El asunto es obligatorio",
+    };
+
+    const showError = (input) => {
+      // const existing = input.parentElement.querySelector(".form__error");
+      // if (existing) existing.remove();
+      input.classList.add("form__input--error");
+      const error = document.createElement("span");
+      error.className = "form__error";
+      error.textContent = messages[input.name] || "Campo obligatorio";
+      input.parentElement.insertBefore(error, input.nextSibling);
+    };
+
+    const clearError = (input) => {
+      input.classList.remove("form__input--error");
+      const error = input.parentElement.querySelector(".form__error");
+      if (error) error.remove();
+    };
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      let valid = true;
+
+      inputs.forEach((input) => {
+        // clearError(input);
+        if (input.hasAttribute("required") && !input.value.trim()) {
+          console.log(input);
+          showError(input);
+          valid = false;
+          return;
+        }
+        if (input.type === "email" && input.value.trim()) {
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim())) {
+            showError(input);
+            valid = false;
+          }
+        }
+      });
+
+      if (valid) {
+        const data = {
+          nombre: form.nombre.value,
+          email: form.email.value,
+          asunto: form.asunto.value,
+        };
+
+        try {
+          const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          });
+          const result = await response.json();
+          if (result.success) {
+            const btn = form.querySelector(".form__submit");
+            btn.textContent = "Enviado ✓";
+            btn.disabled = true;
+            inputs.forEach((i) => (i.disabled = true));
+          }
+        } catch (error) {}
+      }
+    });
+
+    inputs.forEach((input) => {
+      input.addEventListener("input", () => {
+        clearError(input);
+        input.classList.toggle("form__input--valid", !!input.value.trim());
+      });
+    });
+  }
+</script>
